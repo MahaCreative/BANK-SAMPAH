@@ -1,0 +1,38 @@
+{
+    "private": true,
+    "scripts": {
+        "dev": "vite",
+        "build": "vite build && vite build --ssr"
+    },
+    "devDependencies": {
+        "@headlessui/react": "^1.7.10",
+        "@inertiajs/react": "^1.0.0",
+        "@tailwindcss/forms": "^0.5.3",
+        "@tailwindcss/line-clamp": "^0.4.2",
+        "@vitejs/plugin-react": "^3.0.0",
+        "autoprefixer": "^10.4.12",
+        "axios": "^1.1.2",
+        "laravel-vite-plugin": "^0.7.2",
+        "postcss": "^8.4.18",
+        "react": "^18.2.0",
+        "react-dom": "^18.2.0",
+        "tailwind-scrollbar": "^3.0.0",
+        "tailwindcss": "^3.2.1",
+        "vite": "^4.0.0"
+    },
+    "dependencies": {
+        "@emotion/react": "^11.10.5",
+        "@emotion/styled": "^11.10.5",
+        "@mui/icons-material": "^5.11.9",
+        "@mui/material": "^5.11.9",
+        "@mui/styled-engine-sc": "^5.11.9",
+        "clsx": "^1.2.1",
+        "moment": "^2.29.4",
+        "moment-timezone": "^0.5.43",
+        "react-currency-format": "^1.1.0",
+        "react-hot-toast": "^2.4.0",
+        "react-moment": "^1.1.3",
+        "react-multi-carousel": "^2.8.2",
+        "styled-components": "^5.3.6"
+    }
+}

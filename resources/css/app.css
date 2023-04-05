@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "Roboto";
+}
+p {
+    font-family: "Nunito";
+    font-weight: 100;
+}
+@font-face {
+    font-family: "digital";
+    src: url("/public/fonts/digital-7.ttf") format("opentype");
+}
+
+@tailwind utilities;
