@@ -6,7 +6,7 @@ import clsx from "clsx";
 import DropdownMenu from "../Menu/DropdownMenu";
 import { Link, usePage } from "@inertiajs/react";
 
-export default function Drawer() {
+export default function DrawerKasir() {
     const drawerRef = useRef();
     const [drawerOpen, setDrawerOpen] = useState(false);
     const { auth } = usePage().props;
@@ -94,47 +94,36 @@ export default function Drawer() {
                         Dashboard
                     </Link>
                     <DropdownMenu name={"Menu Pengguna"}>
-                        <DropdownMenu.MenuLink href={route("admin.petugas")}>
+                        {/* <DropdownMenu.MenuLink href={route("admin.petugas")}>
                             Data Pengguna
-                        </DropdownMenu.MenuLink>
-                        {/* <DropdownMenu.MenuLink href={route("admin.anggota")}>
-                            Data Anggota
                         </DropdownMenu.MenuLink> */}
+                        <DropdownMenu.MenuLink href={route("admin.anggota")}>
+                            Data Anggota
+                        </DropdownMenu.MenuLink>
+                    </DropdownMenu>
+                    <DropdownMenu name={"Menu Umum"}>
+                        <DropdownMenu.MenuLink
+                            href={route("admin.kategori-sampah")}
+                        >
+                            {" "}
+                            Kelola Sampah
+                        </DropdownMenu.MenuLink>
+                        <DropdownMenu.MenuLink href={route("admin.informasi")}>
+                            Kelola Informasi
+                        </DropdownMenu.MenuLink>
                     </DropdownMenu>
 
                     <DropdownMenu name={"Menu Transaksi"}>
-                        <DropdownMenu.MenuLink
-                            href={route("ketua.transaksi-pembelian")}
-                        >
+                        <DropdownMenu.MenuLink href={route("admin.penjualan")}>
+                            Penjualan Sampah
+                        </DropdownMenu.MenuLink>
+                        <DropdownMenu.MenuLink href={route("admin.pembelian")}>
                             Pembelian Sampah
                         </DropdownMenu.MenuLink>
                         <DropdownMenu.MenuLink
-                            href={route("ketua.transaksi-penjualan")}
-                        >
-                            Penjualan Sampah
-                        </DropdownMenu.MenuLink>
-                        <DropdownMenu.MenuLink
-                            href={route("ketua.transaksi-mutasi")}
+                            href={route("admin-data-mutasi")}
                         >
                             Mutasi
-                        </DropdownMenu.MenuLink>
-                    </DropdownMenu>
-
-                    <DropdownMenu name={"Menu Laporan"}>
-                        <DropdownMenu.MenuLink
-                            href={route("ketua.laporan-penjualan")}
-                        >
-                            Penjualan
-                        </DropdownMenu.MenuLink>
-                        <DropdownMenu.MenuLink
-                            href={route("ketua.laporan-pembelian")}
-                        >
-                            Pembelian
-                        </DropdownMenu.MenuLink>
-                        <DropdownMenu.MenuLink
-                            href={route("ketua.laporan-mutasi")}
-                        >
-                            Transaksi Mutasi
                         </DropdownMenu.MenuLink>
                     </DropdownMenu>
 

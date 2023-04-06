@@ -8,6 +8,7 @@ import Drawer from "@/Components/Drawer/Drawer";
 import toast, { Toaster } from "react-hot-toast";
 import { useEffect } from "react";
 import DrawerAnggota from "@/Components/Drawer/DrawerAnggota";
+import DrawerKasir from "@/Components/Drawer/Drawer.Kasir";
 export default function Authenticated({ header, children }) {
     const { flash } = usePage().props;
     const { auth } = usePage().props;
@@ -17,8 +18,10 @@ export default function Authenticated({ header, children }) {
     let drawer = "";
     if (auth.roles === "anggota") {
         drawer = <DrawerAnggota />;
-    } else {
+    } else if (auth.roles === "ketua bank sampah") {
         drawer = <Drawer />;
+    } else if (auth.roles === "kasir") {
+        drawer = <DrawerKasir />;
     }
     return (
         <div className="min-h-screen overflow-x-hidden">

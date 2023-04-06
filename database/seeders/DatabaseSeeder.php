@@ -42,13 +42,17 @@ class DatabaseSeeder extends Seeder
 
         $user->profile_petugas()->create([
             'kd_petugas' => 'PG/0001',
-            'nama_petugas' => 'Guntur',
+            'nama_petugas' => 'Ketua',
             'no_telp' => '082345519999',
             'alamat' => 'jl. diponegoro'
         ]);
 
-        // ProfileAnggota::factory(10)->create();
-        // KategoriSampah::factory(50)->create();
-        // Informasi::factory(50)->create();
+         $user = \App\Models\User::factory()->create([
+            'name' => 'kasir',
+            'email' => 'kasir@gmail.com',
+            'password' => bcrypt('passwords'),
+        ]);
+        $user->assignRole('kasir');
+
     }
 }

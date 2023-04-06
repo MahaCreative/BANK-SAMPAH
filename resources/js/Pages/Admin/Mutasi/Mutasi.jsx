@@ -280,7 +280,7 @@ export default function Mutasi(props) {
                                       </div>
                                   </div>
                               ))
-                            : ""}
+                            : "Tidak ada Anggota, Silahkan tambahkan anggota terlebih dahulu"}
                     </div>
                 </div>
             </Modal>

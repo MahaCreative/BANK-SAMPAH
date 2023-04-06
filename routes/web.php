@@ -50,11 +50,13 @@ Route::get('/dashboard', function (Request $request) {
 
     if($request->user()->getRoleNames()[0] === 'anggota'){
         return redirect()->route('anggota.dashboard');
+    }else if($request->user()->getRoleNames()[0] === 'kasir'){
+        return Inertia::render('DashboardKasir');
     }
 
 
     return Inertia::render('Dashboard');
-})->middleware(['auth', 'verified', ])->name('dashboard');
+})->middleware(['auth', 'verified', 'profile'])->name('dashboard');
 
 Route::prefix('anggota')->middleware(['auth', 'role:anggota'])->group(function(){
     Route::get('dashboard', [DashboardController::class, 'index'])->name('anggota.dashboard')->middleware('role:anggota');
@@ -69,7 +71,7 @@ Route::prefix('anggota')->middleware(['auth', 'role:anggota'])->group(function()
 });
 
 
-Route::prefix('ketua')->middleware(['auth', 'role:ketua bank sampah'])->group(function(){
+Route::prefix('ketua')->middleware(['auth', 'role:ketua bank sampah', 'profile'])->group(function(){
     Route::get('transaksi-pembelian', [TransaksiPembelian::class, 'index'])->name('ketua.transaksi-pembelian');
     Route::get('transaksi-penjualan', [TransaksiPenjualan::class, 'index'])->name('ketua.transaksi-penjualan');
     Route::get('transaksi-mutasi', [TransaksiMutasi::class, 'index'])->name('ketua.transaksi-mutasi');
@@ -86,12 +88,18 @@ Route::prefix('ketua')->middleware(['auth', 'role:ketua bank sampah'])->group(fu
     Route::patch('data-petugas', [PetugasController::class, 'update']);
     Route::delete('data-petugas', [PetugasController::class, 'delete']);
     Route::post('data-petugas-create-akun', [PetugasController::class, 'create_akun'])->name('admin.petugas-create-akun');
+    // Route Admin
+    Route::get('setting-profile', [SettingProfileController::class, 'index'])->name('admin.setting-profile');
+    Route::patch('setting-profile', [SettingProfileController::class, 'update'])->name('admin.setting-profile');
+
+    Route::post('create-profile', [SettingProfileController::class, 'create_profile'])->name('admin.create-profile');
+    Route::patch('update-profile', [SettingProfileController::class, 'update_profile'])->name('admin.update-profile');
 
 
 });
 
 
-Route::prefix('admin')->middleware(['auth', ])->group(function () {
+Route::prefix('admin')->middleware(['auth', 'role:kasir'])->group(function () {
 
     // Route Admin
     Route::get('setting-profile', [SettingProfileController::class, 'index'])->name('admin.setting-profile');
