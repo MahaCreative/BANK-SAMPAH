@@ -21,7 +21,7 @@ class LaporanPenjualan extends Controller
         $total =  Penjualan::with(['profile_petugas'])
         ->where('status_penjualan' ,'penjualan selesai')->sum('total_penjualan');
          $petugas = $request->user()->profile_petugas->nama_petugas;
-        $pdf = Pdf::loadView('Laporan.penjualan', ['penjualan' => $penjualan, 'total' => $total, 'date' => now()->format('D-M-Y'), 'petugas' => $petugas]);
+        $pdf = Pdf::loadView('Laporan.Penjualan', ['penjualan' => $penjualan, 'total' => $total, 'date' => now()->format('D-M-Y'), 'petugas' => $petugas]);
         return $pdf->download('Laporan_penjualan.pdf');
     }
 }
