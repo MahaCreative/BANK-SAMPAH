@@ -47,8 +47,8 @@ class DatabaseSeeder extends Seeder
             'alamat' => 'jl. diponegoro'
         ]);
 
-        ProfileAnggota::factory(10)->create();
-        KategoriSampah::factory(50)->create();
-        Informasi::factory(50)->create();
+        // ProfileAnggota::factory(10)->create();
+        // KategoriSampah::factory(50)->create();
+        // Informasi::factory(50)->create();
     }
 }
