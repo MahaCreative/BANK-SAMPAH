@@ -70,7 +70,7 @@ export default function Drawer() {
                                 </h3>
                                 <Link
                                     className="mr-2 hover:text-teal-400 font-nunito font-light text-white bg-teal-400 px-4 py-1 rounded-md hover:bg-teal-600"
-                                    // href={route("admin.setting-profile")}
+                                    href={route("admin.setting-profile")}
                                 >
                                     Setting Profile
                                 </Link>
