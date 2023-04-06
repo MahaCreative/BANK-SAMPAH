@@ -46,40 +46,19 @@ export default function Dashboard(props) {
                 </div>
             </div>
 
-            <div className="relative mt-24 px-4 max-h-[250px] overflow-y-auto scrollbar-thin scrollbar-thumb-rounded-full scrollbar-track-rounded-full scrollbar-thumb-emerald-400 scrollbar-track-emerald-200">
+            <div className="relative mt-24 px-4 max-h-[350px] overflow-y-auto scrollbar-thin scrollbar-thumb-rounded-full scrollbar-track-rounded-full scrollbar-thumb-emerald-400 scrollbar-track-emerald-200">
                 <h3 className="font-semibold border-b border-teal-400 inline my-2">
                     Menu Pengguna
                 </h3>
                 {/* Menu Kepala Koperasi */}
-                <div className="grid grid-cols-2 gap-2 my-2">
-                    <div className="py-2.5 px-2 rounded-sm shadow-sm shadow-gray-200 text-center hover:cursor-pointer hover:bg-gray-100">
-                        <img src="/images/user.png" alt="" />
-                        <p className="text-sm">Kelola Pengguna</p>
-                    </div>
+                <div className="grid grid-cols-1 gap-2 my-2">
                     <Link
-                        href={route("admin.anggota")}
-                        className="py-2.5 px-2 rounded-sm shadow-sm shadow-gray-200 text-center hover:cursor-pointer hover:bg-gray-100"
+                        href={route("admin.petugas")}
+                        className="py-2.5 px-2 rounded-sm shadow-sm shadow-gray-200 text-center hover:cursor-pointer hover:bg-gray-100 flex items-center justify-center flex-col"
                     >
                         <img src="/images/user.png" alt="" />
-                        <p className="text-sm">Kelola Anggota</p>
+                        <p className="text-sm">Kelola Petugas</p>
                     </Link>
-                </div>
-
-                <h3 className="font-semibold border-b border-teal-400 inline my-2">
-                    Menu Umum
-                </h3>
-
-                <div className="grid grid-cols-2 gap-2 my-2">
-                    <div className="py-2.5 px-2 rounded-sm shadow-sm shadow-gray-200 text-center hover:cursor-pointer hover:bg-gray-100">
-                        <img src="/images/ic_kategori.png" alt="" />
-                        <p className="text-sm">Kategori Sampah</p>
-                    </div>
-                    <div className="relative py-2.5 px-2 rounded-sm shadow-sm shadow-gray-200 text-center hover:cursor-pointer hover:bg-gray-100">
-                        <img src="/images/informasi.png" alt="" />
-                        <p className="text-sm absolute bottom-2 left-0 w-full">
-                            Informasi
-                        </p>
-                    </div>
                 </div>
 
                 <h3 className="font-semibold border-b border-teal-400 inline my-2">
@@ -87,18 +66,55 @@ export default function Dashboard(props) {
                 </h3>
 
                 <div className="grid grid-cols-3 gap-2 my-2">
-                    <div className="py-2.5 px-2 rounded-sm shadow-sm shadow-gray-200 text-center hover:cursor-pointer hover:bg-gray-100">
+                    <Link
+                        href={route("ketua.transaksi-pembelian")}
+                        className="py-2.5 px-2 rounded-sm shadow-sm shadow-gray-200 text-center hover:cursor-pointer hover:bg-gray-100"
+                    >
                         <img src="/images/ic_recycle.png" alt="" />
                         <p className="text-sm">Pembelian Sampah</p>
-                    </div>
-                    <div className="py-2.5 px-2 rounded-sm shadow-sm shadow-gray-200 text-center hover:cursor-pointer hover:bg-gray-100">
+                    </Link>
+                    <Link
+                        href={route("ketua.transaksi-penjualan")}
+                        className="py-2.5 px-2 rounded-sm shadow-sm shadow-gray-200 text-center hover:cursor-pointer hover:bg-gray-100"
+                    >
                         <img src="/images/ic_truk.png" alt="" />
                         <p className="text-sm">Penjualan Sampah</p>
-                    </div>
-                    <div className="py-2.5 px-2 rounded-sm shadow-sm shadow-gray-200 text-center hover:cursor-pointer hover:bg-gray-100">
+                    </Link>
+                    <Link
+                        href={route("ketua.transaksi-mutasi")}
+                        className="py-2.5 px-2 rounded-sm shadow-sm shadow-gray-200 text-center hover:cursor-pointer hover:bg-gray-100"
+                    >
                         <img src="/images/mutasi.png" alt="" />
                         <p className="text-sm">Transaksi Mutasi</p>
-                    </div>
+                    </Link>
+                </div>
+
+                <h3 className="font-semibold border-b border-teal-400 inline my-2">
+                    Menu Laporan
+                </h3>
+
+                <div className="grid grid-cols-3 gap-2 my-2">
+                    <Link
+                        href={route("ketua.laporan-pembelian")}
+                        className="py-2.5 px-2 rounded-sm shadow-sm shadow-gray-200 text-center hover:cursor-pointer hover:bg-gray-100"
+                    >
+                        <img src="/images/ic_recycle.png" alt="" />
+                        <p className="text-sm">Pembelian Sampah</p>
+                    </Link>
+                    <Link
+                        href={route("ketua.laporan-penjualan")}
+                        className="py-2.5 px-2 rounded-sm shadow-sm shadow-gray-200 text-center hover:cursor-pointer hover:bg-gray-100"
+                    >
+                        <img src="/images/ic_truk.png" alt="" />
+                        <p className="text-sm">Penjualan Sampah</p>
+                    </Link>
+                    <Link
+                        href={route("ketua.laporan-mutasi")}
+                        className="py-2.5 px-2 rounded-sm shadow-sm shadow-gray-200 text-center hover:cursor-pointer hover:bg-gray-100"
+                    >
+                        <img src="/images/mutasi.png" alt="" />
+                        <p className="text-sm">Transaksi Mutasi</p>
+                    </Link>
                 </div>
             </div>
         </AuthenticatedLayout>

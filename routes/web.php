@@ -15,6 +15,11 @@ use App\Http\Controllers\Anggota\KategoriSampah;
 use App\Http\Controllers\Anggota\SettingProfile;
 use App\Http\Controllers\Kasir\AnggotaController;
 use App\Http\Controllers\Kasir\KategoriSampahController;
+use App\Http\Controllers\Ketua\LaporanPembelian;
+use App\Http\Controllers\Ketua\LaporanPenjualan;
+use App\Http\Controllers\Ketua\TransaksiMutasi;
+use App\Http\Controllers\Ketua\TransaksiPembelian;
+use App\Http\Controllers\Ketua\TransaksiPenjualan;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Foundation\Application;
 use Illuminate\Http\Request;
@@ -64,6 +69,27 @@ Route::prefix('anggota')->middleware(['auth', 'role:anggota'])->group(function()
 });
 
 
+Route::prefix('ketua')->middleware(['auth', 'role:ketua bank sampah'])->group(function(){
+    Route::get('transaksi-pembelian', [TransaksiPembelian::class, 'index'])->name('ketua.transaksi-pembelian');
+    Route::get('transaksi-penjualan', [TransaksiPenjualan::class, 'index'])->name('ketua.transaksi-penjualan');
+    Route::get('transaksi-mutasi', [TransaksiMutasi::class, 'index'])->name('ketua.transaksi-mutasi');
+
+    Route::get('laporan-pembelian', [LaporanPembelian::class, 'index'])->name('ketua.laporan-pembelian');
+    Route::get('pdf-laporan-pembelian', [LaporanPembelian::class, 'get_pdf'])->name('ketua.pdf-laporan-pembelian');
+    Route::get('laporan-penjualan', [LaporanPenjualan::class, 'index'])->name('ketua.laporan-penjualan');
+    Route::get('pdf-laporan-penjualan', [LaporanPenjualan::class, 'get_pdf'])->name('ketua.pdf-laporan-penjualan');
+
+    Route::get('laporan-mutasi', [LaporanPembelian::class, 'index'])->name('ketua.laporan-mutasi');
+
+    Route::get('data-petugas', [PetugasController::class, 'index'])->name('admin.petugas');
+    Route::post('data-petugas', [PetugasController::class, 'store']);
+    Route::patch('data-petugas', [PetugasController::class, 'update']);
+    Route::delete('data-petugas', [PetugasController::class, 'delete']);
+    Route::post('data-petugas-create-akun', [PetugasController::class, 'create_akun'])->name('admin.petugas-create-akun');
+
+
+});
+
 
 Route::prefix('admin')->middleware(['auth', ])->group(function () {
 
@@ -81,11 +107,6 @@ Route::prefix('admin')->middleware(['auth', ])->group(function () {
     Route::patch('data-anggota', [AnggotaController::class, 'update']);
     Route::delete('data-anggota', [AnggotaController::class, 'delete']);
 
-    Route::get('data-petugas', [PetugasController::class, 'index'])->name('admin.petugas');
-    Route::post('data-petugas', [PetugasController::class, 'store']);
-    Route::patch('data-petugas', [PetugasController::class, 'update']);
-    Route::delete('data-petugas', [PetugasController::class, 'delete']);
-    Route::post('data-petugas-create-akun', [PetugasController::class, 'create_akun'])->name('admin.petugas-create-akun');
 
     Route::get('kategori-sampah', [KategoriSampahController::class, 'index'])->name('admin.kategori-sampah');
     Route::post('kategori-sampah', [KategoriSampahController::class, 'store']);

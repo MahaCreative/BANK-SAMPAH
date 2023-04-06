@@ -70,13 +70,13 @@ export default function Drawer() {
                                 </h3>
                                 <Link
                                     className="mr-2 hover:text-teal-400 font-nunito font-light text-white bg-teal-400 px-4 py-1 rounded-md hover:bg-teal-600"
-                                    href={route("admin.setting-profile")}
+                                    // href={route("admin.setting-profile")}
                                 >
                                     Setting Profile
                                 </Link>
                                 <Link
                                     className="hover:text-red-400 font-nunito font-light text-white bg-red-400 px-4 py-1 rounded-md hover:bg-red-600"
-                                    href={route("admin.setting-profile")}
+                                    // href={route("admin.setting-profile")}
                                 >
                                     Logout
                                 </Link>
@@ -98,26 +98,37 @@ export default function Drawer() {
                         </DropdownMenu.MenuLink>
                     </DropdownMenu>
 
-                    <DropdownMenu name={"Menu Umum"}>
+                    <DropdownMenu name={"Menu Transaksi"}>
                         <DropdownMenu.MenuLink
-                            href={route("admin.kategori-sampah")}
+                            href={route("ketua.transaksi-pembelian")}
                         >
-                            Kategori Sampah
+                            Pembelian Sampah
                         </DropdownMenu.MenuLink>
-                        <DropdownMenu.MenuLink href={route("admin.informasi")}>
-                            Informasi
+                        <DropdownMenu.MenuLink
+                            href={route("ketua.transaksi-penjualan")}
+                        >
+                            Penjualan Sampah
+                        </DropdownMenu.MenuLink>
+                        <DropdownMenu.MenuLink
+                            href={route("ketua.transaksi-mutasi")}
+                        >
+                            Mutasi
                         </DropdownMenu.MenuLink>
                     </DropdownMenu>
 
-                    <DropdownMenu name={"Menu Transaksi"}>
-                        <DropdownMenu.MenuLink href={route("admin.penjualan")}>
+                    <DropdownMenu name={"Menu Laporan"}>
+                        <DropdownMenu.MenuLink
+                            href={route("ketua.laporan-penjualan")}
+                        >
                             Penjualan
                         </DropdownMenu.MenuLink>
-                        <DropdownMenu.MenuLink href={route("admin.pembelian")}>
+                        <DropdownMenu.MenuLink
+                            href={route("ketua.laporan-pembelian")}
+                        >
                             Pembelian
                         </DropdownMenu.MenuLink>
                         <DropdownMenu.MenuLink
-                            href={route("admin-data-mutasi")}
+                            href={route("ketua.laporan-mutasi")}
                         >
                             Transaksi Mutasi
                         </DropdownMenu.MenuLink>
