@@ -89,11 +89,11 @@ Route::prefix('ketua')->middleware(['auth', 'role:ketua bank sampah', 'profile']
     Route::delete('data-petugas', [PetugasController::class, 'delete']);
     Route::post('data-petugas-create-akun', [PetugasController::class, 'create_akun'])->name('admin.petugas-create-akun');
     // Route Admin
-    Route::get('setting-profile', [SettingProfileController::class, 'index'])->name('admin.setting-profile');
-    Route::patch('setting-profile', [SettingProfileController::class, 'update'])->name('admin.setting-profile');
+    Route::get('setting-profile', [SettingProfileController::class, 'index'])->name('ketua.setting-profile');
+    Route::patch('setting-profile', [SettingProfileController::class, 'update'])->name('ketua.setting-profile');
 
-    Route::post('create-profile', [SettingProfileController::class, 'create_profile'])->name('admin.create-profile');
-    Route::patch('update-profile', [SettingProfileController::class, 'update_profile'])->name('admin.update-profile');
+    Route::post('create-profile', [SettingProfileController::class, 'create_profile'])->name('ketua.create-profile');
+    Route::patch('update-profile', [SettingProfileController::class, 'update_profile'])->name('ketua.update-profile');
 
 
 });

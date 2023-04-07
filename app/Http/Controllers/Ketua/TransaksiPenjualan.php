@@ -65,7 +65,7 @@ class TransaksiPenjualan extends Controller
 
     }
     public function index(Request $request){
-        $penjualan = penjualanResource::collection($this->query($request));
+        $penjualan = PenjualanResource::collection($this->query($request));
         $penjualanBulan = penjualan::where('status_penjualan', '=', 'penjualan selesai')
         ->whereMonth('created_at', date('m'))
         ->whereYear('created_at', date('Y'))
