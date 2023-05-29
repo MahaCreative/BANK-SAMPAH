@@ -36,8 +36,11 @@ class AnggotaController extends Controller
     public function index(Request $request)
     {
         $anggota = ProfilAnggotaResource::collection($this->query($request->search, $request->paginate));
+        $lk = ProfileAnggota::where('jenis_kelamin', '=', 'Laki-Laki')->count();
+        $pr = ProfileAnggota::where('jenis_kelamin', '=', 'Laki-Laki')->count();
+        $count = ProfileAnggota::count();
 
-        return inertia('Kasir/Anggota/Anggota', ['anggota' => $anggota]);
+        return inertia('Kasir/Anggota/Anggota', ['anggota' => $anggota, 'lk' => $lk, 'pr'=> $pr, 'count' => $count]);
     }
 
     public function store(Request $request)

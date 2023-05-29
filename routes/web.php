@@ -37,16 +37,20 @@ use Inertia\Inertia;
 |
 */
 
-Route::get('/', function () {
-    return Inertia::render('Welcome', [
-        'canLogin' => Route::has('login'),
-        'canRegister' => Route::has('register'),
-        'laravelVersion' => Application::VERSION,
-        'phpVersion' => PHP_VERSION,
-    ]);
-});
 
-Route::get('/dashboard', function (Request $request) {
+
+Route::get('/', function (Request $request) {
+
+    if($request->user()->getRoleNames()[0] === 'anggota'){
+        return redirect()->route('anggota.dashboard');
+    }else if($request->user()->getRoleNames()[0] === 'kasir'){
+        return Inertia::render('DashboardKasir');
+    }
+
+
+    return Inertia::render('Dashboard');
+})->middleware(['auth', 'verified', 'profile'])->name('dashboard');
+Route::get('dashboard', function (Request $request) {
 
     if($request->user()->getRoleNames()[0] === 'anggota'){
         return redirect()->route('anggota.dashboard');
@@ -99,7 +103,7 @@ Route::prefix('ketua')->middleware(['auth', 'role:ketua bank sampah', 'profile']
 });
 
 
-Route::prefix('admin')->middleware(['auth', 'role:kasir'])->group(function () {
+Route::prefix('admin')->middleware(['auth', 'role:kasir', 'profile'])->group(function () {
 
     // Route Admin
     Route::get('setting-profile', [SettingProfileController::class, 'index'])->name('admin.setting-profile');

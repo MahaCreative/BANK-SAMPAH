@@ -13,6 +13,11 @@ import LihatAnggota from "./LihatAnggota";
 
 export default function Anggota(props) {
     const { data: anggota, meta, links } = props.anggota;
+
+    const lk = props.lk;
+    const pr = props.pr;
+    const count = props.count;
+    console.log(lk);
     const [modelAnggota, setModelAnggota] = useState([null]);
     const [modalAdd, setModalAdd] = useState(false);
     const [lihatModal, setLihatModal] = useState(false);
@@ -124,7 +129,7 @@ export default function Anggota(props) {
                         </div>
                         <div className="mx-4">
                             <h3 className="text-5xl font-bold text-white">
-                                55
+                                {count}
                             </h3>
                         </div>
                     </div>
@@ -142,7 +147,7 @@ export default function Anggota(props) {
                             </div>
                             <div className="mx-4">
                                 <h3 className="text-5xl font-bold text-white">
-                                    55
+                                    {lk}
                                 </h3>
                             </div>
                         </div>
@@ -159,7 +164,7 @@ export default function Anggota(props) {
                             </div>
                             <div className="mx-4">
                                 <h3 className="text-5xl font-bold text-white">
-                                    55
+                                    {pr}
                                 </h3>
                             </div>
                         </div>
@@ -208,7 +213,7 @@ export default function Anggota(props) {
                                         </div>
                                     </div>
                                     <div className="flex absolute bottom-1.5 right-2 gap-1  w-1/2">
-                                        {item.user ? (
+                                        {item.user !== null ? (
                                             ""
                                         ) : (
                                             <Buttons
