@@ -15,8 +15,8 @@ class CanProfile
      */
     public function handle(Request $request, Closure $next): Response
     {
-
-        if($request->user()->profile_petugas !== null){
+        // dd($request->user()->profile_anggota);
+        if($request->user()->profile_anggota !== null){
             return $next($request);
         }
         return redirect()->route('admin.setting-profile');

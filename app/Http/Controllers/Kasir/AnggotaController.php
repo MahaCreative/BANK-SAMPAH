@@ -64,7 +64,6 @@ class AnggotaController extends Controller
         $kd_anggota = 'AG' . now()->format('m') . now()->format('y') . $countAnggota + 1;
         $urlFoto = $request->file('foto_anggota') ? $request->file('foto_anggota')->store('images/profile_anggota') : 'images/user.png';
         $anggota = ProfileAnggota::create([
-            'user_id' => $request->user()->id,
             'nik' => $request->nik,
             'kk' => $request->kk,
             'kd_anggota' => $kd_anggota,
@@ -79,6 +78,7 @@ class AnggotaController extends Controller
             'no_rekening' => $request->no_rekening,
             'status_verifikasi' => 'aktif',
             'telp' => $request->telp,
+            'petugas_id' => $request->user()->id,
         ]);
         return redirect()->back()->with([
             'type' => 'success',
@@ -92,7 +92,6 @@ class AnggotaController extends Controller
         $profile = ProfileAnggota::findOrFail($request->data['id']);
         $urlFoto = $request->file('foto_anggota') ? $request->file('foto_anggota')->store('images/profile_anggota') : 'images/user.png';
         $profile->update([
-            'user_id' => $request->user()->id,
             'nik' => $request->data['nik'],
             'kk' => $request->data['kk'],
             'nama_anggota' => $request->data['nama_anggota'],

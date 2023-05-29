@@ -24,9 +24,15 @@ export default function Dashboard(props) {
                         </p>
                         <div className="flex flex-col items-center justify-center text-white my-2">
                             <h3>Saldo Tabungan Anda</h3>
-                            <h3 className="text-lg font-bold">
-                                Rp. {FormatUang(saldo)}
-                            </h3>
+                            {saldo === 0 ? (
+                                <h3 className="text-lg font-bold">
+                                    Rp. {FormatUang(saldo)}
+                                </h3>
+                            ) : (
+                                <h3 className="text-lg font-bold">
+                                    Rp. {FormatUang(saldo.saldo)}
+                                </h3>
+                            )}
                         </div>
                     </div>
                     <div className="flex gap-2 justify-evenly">

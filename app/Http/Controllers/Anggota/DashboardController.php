@@ -13,7 +13,9 @@ class DashboardController extends Controller
     public function index(Request $request){
 
         $anggota = ProfileAnggota::with('mutasi')->where('user_id', $request->user()->id)->first();
-        $saldo = mutasi::where('profile_anggota_id', $anggota->id)->latest()->first();
+        $saldo = mutasi::where('profile_anggota_id', $anggota->id)->latest()->first() === null ? 0 : mutasi::where('profile_anggota_id', $anggota->id)->latest()->first();
+
+
 
         $pemasukan = mutasi::where('profile_anggota_id', $anggota->id)
             ->where('jenis_mutasi', '=', 'Setoran')
@@ -26,6 +28,6 @@ class DashboardController extends Controller
             // ->get();
             // dd($anggota);
         // dd($penarikan);
-        return inertia('Anggota/Dashboard/Dashboard', ['pemasukan' => $pemasukan, 'penarikan' => $penarikan, 'saldo' => $saldo->saldo]);
+        return inertia('Anggota/Dashboard/Dashboard', ['pemasukan' => $pemasukan, 'penarikan' => $penarikan, 'saldo' => $saldo]);
     }
 }
