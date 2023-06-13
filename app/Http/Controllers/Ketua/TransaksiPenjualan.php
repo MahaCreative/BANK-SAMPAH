@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Ketua;
 
 use App\Http\Controllers\Controller;
 use App\Http\Resources\penjualanResource;
+use App\Http\Resources\PenjualanResources;
 use App\Models\penjualan;
 use Illuminate\Http\Request;
 
@@ -65,7 +66,7 @@ class TransaksiPenjualan extends Controller
 
     }
     public function index(Request $request){
-        $penjualan = PenjualanResource::collection($this->query($request));
+        $penjualan = PenjualanResources::collection($this->query($request));
         $penjualanBulan = penjualan::where('status_penjualan', '=', 'penjualan selesai')
         ->whereMonth('created_at', date('m'))
         ->whereYear('created_at', date('Y'))
