@@ -74,7 +74,7 @@ export default function Penjualan(props) {
             <Authenticated>
                 <Header header={"Data Penjualan Sampah"} />
                 <div className="relative ">
-                    <div className="flex -bottom-6 left-0 absolute w-full px-4  gap-2 justify-evenly">
+                    <div className="flex bottom-5 left-0 absolute w-full px-4  gap-2 justify-evenly">
                         <div className="px-4 py-2 w-full bg-white rounded-md shadow-sm shadow-gray-300/50 flex justify-between items-center">
                             <div className="flex flex-col ">
                                 <img
@@ -114,14 +114,16 @@ export default function Penjualan(props) {
                             onClick={() => setModalFilterDate(true)}
                             className="mb-2 shadow-sm shadow-gray-400/50 rounded-md py-1.5 px-4 hover:cursor-pointer"
                         >
-                            <div className="border-emerald-400 border-b-2 py-1 flex justify-between">
-                                <div className="flex gap-3">
+                            <div className="border-emerald-400 border-b-2 py-1 flex justify-between items-center">
+                                <div className="flex gap-3 items-center">
                                     <img
                                         src="/images/date.png"
                                         className="w-6 h-6"
                                         alt=""
                                     />
-                                    <p>Pilih Tanggal Transaksasi</p>
+                                    <p className="text-[7pt]">
+                                        Tanggal Transaksasi
+                                    </p>
                                 </div>
                                 <ArrowForwardIosIcon
                                     fontSize="small"

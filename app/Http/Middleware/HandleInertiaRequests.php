@@ -34,8 +34,8 @@ class HandleInertiaRequests extends Middleware
     {
         $profile = [];
         $roles = [];
-        // dd($request->user()->getRoleNames());
         if ($request->user()) {
+            // dd($request->user()->getRoleNames());
             if ($request->user()->getRoleNames()[0] !== 'anggota') {
 
                 $profile = $request->user()->profile_petugas;

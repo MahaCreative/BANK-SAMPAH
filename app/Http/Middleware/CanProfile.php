@@ -17,8 +17,8 @@ class CanProfile
     {
         // dd($request->user()->profile_anggota);
         if($request->user()->profile_anggota !== null){
-            return $next($request);
         }
-        return redirect()->route('admin.setting-profile');
+        return $next($request);
+        // return redirect()->route('admin.setting-profile');
     }
 }

@@ -3,7 +3,7 @@ import { Head, Link, usePage } from "@inertiajs/react";
 
 export default function DashboardKasir(props) {
     const { auth } = usePage().props;
-    console.log(auth);
+
     return (
         <AuthenticatedLayout
             auth={props.auth}
@@ -16,7 +16,7 @@ export default function DashboardKasir(props) {
         >
             <Head title="Dashboard" />
             {/* Section Menu */}
-            <div className="w-full bg-teal-500 h-56 py-12 px-4 rounded-b-[20%] relative">
+            <div className="w-full bg-teal-500 mt-8 h-56 py-12 px-4 rounded-b-[20%] relative ">
                 <div>
                     <p className="text-white font-extralight text-sm">
                         Selamat Datang

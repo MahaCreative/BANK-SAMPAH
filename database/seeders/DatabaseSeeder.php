@@ -47,12 +47,6 @@ class DatabaseSeeder extends Seeder
             'alamat' => 'jl. diponegoro'
         ]);
 
-         $user = \App\Models\User::factory()->create([
-            'name' => 'kasir',
-            'email' => 'kasir@gmail.com',
-            'password' => bcrypt('passwords'),
-        ]);
-        $user->assignRole('kasir');
 
     }
 }

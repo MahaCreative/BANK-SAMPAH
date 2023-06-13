@@ -1,7 +1,9 @@
 import AuthenticatedLayout from "@/Layouts/AuthenticatedLayout";
-import { Head, Link } from "@inertiajs/react";
+import { Head, Link, usePage } from "@inertiajs/react";
 
 export default function Dashboard(props) {
+    const { auth } = usePage().props;
+
     return (
         <AuthenticatedLayout
             auth={props.auth}
@@ -14,13 +16,13 @@ export default function Dashboard(props) {
         >
             <Head title="Dashboard" />
             {/* Section Menu */}
-            <div className="w-full bg-teal-500 h-56 py-12 px-4 rounded-b-[20%] relative">
+            <div className="w-full bg-teal-500 h-56 py-12 px-4 rounded-b-[20%] relative scrollbar-none">
                 <div>
                     <p className="text-white font-extralight text-sm">
                         Selamat Datang
                     </p>
                     <p className="text-white font-sans font-bold text-2xl">
-                        Guntur Madjid
+                        {auth.profile.nama_petugas}
                     </p>
                 </div>
                 <div className="absolute -bottom-20 left-0 bg-white mx-4 rounded-md shadow-sm shadow-gray-300/50 flex items-center">
@@ -46,7 +48,7 @@ export default function Dashboard(props) {
                 </div>
             </div>
 
-            <div className="relative mt-24 px-4 max-h-[350px] overflow-y-auto scrollbar-thin scrollbar-thumb-rounded-full scrollbar-track-rounded-full scrollbar-thumb-emerald-400 scrollbar-track-emerald-200">
+            <div className=" scrollbar-none relative mt-24 px-4 max-h-[350px] overflow-y-auto scrollbar-thin scrollbar-thumb-rounded-full scrollbar-track-rounded-full scrollbar-thumb-emerald-400 scrollbar-track-emerald-200">
                 <h3 className="font-semibold border-b border-teal-400 inline my-2">
                     Menu Pengguna
                 </h3>

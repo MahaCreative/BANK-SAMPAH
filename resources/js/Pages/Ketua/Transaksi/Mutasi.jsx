@@ -74,7 +74,7 @@ export default function Mutasi(props) {
             <Authenticated>
                 <Header header={"Data Transaksi Mutasi"} />
                 <div className="relative ">
-                    <div className="flex -bottom-6 left-0 absolute w-full px-4  gap-2 justify-evenly">
+                    <div className="flex bottom-5 left-0 absolute w-full px-4  gap-2 justify-evenly">
                         <div className="px-4 py-2 w-full bg-white rounded-md shadow-sm shadow-gray-300/50 flex justify-between items-center">
                             <div className="flex flex-col ">
                                 <img
@@ -121,7 +121,9 @@ export default function Mutasi(props) {
                                         className="w-6 h-6"
                                         alt=""
                                     />
-                                    <p>Pilih Tanggal Transaksasi</p>
+                                    <p className="text-[7pt]">
+                                        Tanggal Transaksasi
+                                    </p>
                                 </div>
                                 <ArrowForwardIosIcon
                                     fontSize="small"

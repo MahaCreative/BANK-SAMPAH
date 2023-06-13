@@ -46,16 +46,17 @@ Route::get('/', function (Request $request) {
     }else if($request->user()->getRoleNames()[0] === 'kasir'){
         return Inertia::render('DashboardKasir');
     }
-
-
     return Inertia::render('Dashboard');
-})->middleware(['auth', 'verified', 'profile'])->name('dashboard');
+})->middleware(['auth', 'verified'])->name('dashboard');
 Route::get('dashboard', function (Request $request) {
 
     if($request->user()->getRoleNames()[0] === 'anggota'){
         return redirect()->route('anggota.dashboard');
     }else if($request->user()->getRoleNames()[0] === 'kasir'){
         return Inertia::render('DashboardKasir');
+    }
+    else if($request->user()->getRoleNames()[0] === 'ketua bank sampah'){
+        return Inertia::render('Dashboard');
     }
 
 
@@ -68,14 +69,14 @@ Route::prefix('anggota')->middleware(['auth', 'role:anggota'])->group(function()
     Route::get('history-penjualan', [HistoryPenjualanController::class, 'index'])->name('anggota.history-penjualan');
     Route::get('history-penarikan', [HistoryPenarikan::class, 'index'])->name('anggota.history-penarikan');
     Route::get('history-mutasi', [HistoryMutasiController::class, 'index'])->name('anggota.history-mutasi');
-    Route::get('setting-profile', [SettingProfile::class, 'index'])->name('anggota.setting-profile');
-    Route::patch('setting-profile', [SettingProfile::class, 'update'])->name('anggota.setting-profile');
     Route::post('create-profile', [SettingProfile::class, 'create_profile'])->name('anggota.create-profile');
     Route::patch('update-profile', [SettingProfile::class, 'update_profile'])->name('anggota.update-profile');
+    Route::get('setting-profile', [SettingProfile::class, 'index'])->name('anggota.setting-profile');
+    Route::patch('setting-profile', [SettingProfile::class, 'update'])->name('anggota.setting-profile');
 });
 
 
-Route::prefix('ketua')->middleware(['auth', 'role:ketua bank sampah', 'profile'])->group(function(){
+Route::prefix('ketua')->middleware(['auth', 'role:ketua bank sampah'])->group(function(){
     Route::get('transaksi-pembelian', [TransaksiPembelian::class, 'index'])->name('ketua.transaksi-pembelian');
     Route::get('transaksi-penjualan', [TransaksiPenjualan::class, 'index'])->name('ketua.transaksi-penjualan');
     Route::get('transaksi-mutasi', [TransaksiMutasi::class, 'index'])->name('ketua.transaksi-mutasi');
@@ -103,7 +104,7 @@ Route::prefix('ketua')->middleware(['auth', 'role:ketua bank sampah', 'profile']
 });
 
 
-Route::prefix('admin')->middleware(['auth', 'role:kasir', 'profile'])->group(function () {
+Route::prefix('admin')->middleware(['auth' , 'profile'])->group(function () {
 
     // Route Admin
     Route::get('setting-profile', [SettingProfileController::class, 'index'])->name('admin.setting-profile');

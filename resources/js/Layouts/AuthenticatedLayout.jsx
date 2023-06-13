@@ -24,10 +24,11 @@ export default function Authenticated({ header, children }) {
         drawer = <DrawerKasir />;
     }
     return (
-        <div className="min-h-screen overflow-x-hidden">
+        <div className="min-h-screen overflow-x-hidden scrollbar-none">
             <Toaster />
             <div>{drawer}</div>
-            <div className=" overflow-y-auto  scrollbar-thin scrollbar-thumb-rounded-full scrollbar-track-rounded-full scrollbar-thumb-emerald-400 scrollbar-track-emerald-200">
+
+            <div className=" overflow-y-auto scrollbar-none  scrollbar-thin scrollbar-thumb-rounded-full scrollbar-track-rounded-full scrollbar-thumb-emerald-400 scrollbar-track-emerald-200">
                 {children}
             </div>
         </div>

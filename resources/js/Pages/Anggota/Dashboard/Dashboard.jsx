@@ -14,7 +14,7 @@ export default function Dashboard(props) {
         <div>
             <Authenticated>
                 {/* Section Menu */}
-                <div className="w-full bg-teal-500 h-56 pt-12 px-4 rounded-b-[20%] relative">
+                <div className="w-full bg-teal-500 h-56 pt-20 px-4 rounded-b-[20%] relative">
                     <div>
                         <p className="text-white font-extralight text-sm">
                             Selamat Datang
@@ -64,7 +64,7 @@ export default function Dashboard(props) {
                         </div>
                     </div>
                 </div>
-                <div className="relative mt-16 px-4 max-h-[250px] overflow-y-auto scrollbar-thin scrollbar-thumb-rounded-full scrollbar-track-rounded-full scrollbar-thumb-emerald-400 scrollbar-track-emerald-200">
+                <div className="relative mt-28 px-4 max-h-[80vh] overflow-y-auto scrollbar-thin scrollbar-thumb-rounded-full scrollbar-track-rounded-full scrollbar-thumb-emerald-400 scrollbar-track-emerald-200">
                     <h3 className="font-semibold border-b border-teal-400 inline my-2">
                         Menu
                     </h3>

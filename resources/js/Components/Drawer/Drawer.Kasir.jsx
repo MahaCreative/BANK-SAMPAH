@@ -23,7 +23,7 @@ export default function DrawerKasir() {
     });
     return (
         <div>
-            <div className="bg-white shadow-sm shadow-gray-200/30 px-4 py-2.5">
+            <div className="bg-white shadow-sm shadow-gray-200/30 px-4 py-2.5 fixed w-full z-[99]">
                 <div className="flex justify-between items-center">
                     <div className="font-bold uppercase text-teal-500">
                         Bank Sampah
@@ -49,7 +49,7 @@ export default function DrawerKasir() {
                         drawerOpen
                             ? "visible h-[90%]"
                             : "collapse -translate-y-11 opacity-0 h-0",
-                        "z-[9999] absolute flex flex-col gap-2 shadow-sm rounded-b-3xl bg-teal-400 shadow-gray-300/50 py-2.5 top-14 left-0 w-full transition-all duration-300 ease-in-out "
+                        "z-[9999] bg-teal-400 fixed flex flex-col gap-2 shadow-sm rounded-b-3xl shadow-gray-300/50 py-2.5 top-12 left-0 w-full transition-all duration-300 ease-in-out"
                     )}
                 >
                     <div className="bg-white px-4 py-2.5">
