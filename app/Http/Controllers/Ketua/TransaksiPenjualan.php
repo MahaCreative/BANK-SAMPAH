@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Ketua;
 use App\Http\Controllers\Controller;
 use App\Http\Resources\penjualanResource;
 use App\Http\Resources\PenjualanResources;
-use App\Models\penjualan;
+use App\Models\Penjualan as penjualan;
 use Illuminate\Http\Request;
 
 class TransaksiPenjualan extends Controller
