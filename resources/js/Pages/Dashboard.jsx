@@ -48,7 +48,7 @@ export default function Dashboard(props) {
                 </div>
             </div>
 
-            <div className=" scrollbar-none relative mt-24 px-4 max-h-[350px] overflow-y-auto scrollbar-thin scrollbar-thumb-rounded-full scrollbar-track-rounded-full scrollbar-thumb-emerald-400 scrollbar-track-emerald-200">
+            <div className=" scrollbar-none relative mt-24 px-4 max-h-[90vh] overflow-y-auto scrollbar-thin scrollbar-thumb-rounded-full scrollbar-track-rounded-full scrollbar-thumb-emerald-400 scrollbar-track-emerald-200">
                 <h3 className="font-semibold border-b border-teal-400 inline my-2">
                     Menu Pengguna
                 </h3>
