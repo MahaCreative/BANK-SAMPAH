@@ -111,12 +111,10 @@ export default function KategoriSampah(props) {
                                                 {item.nama_kategori}
                                             </h3>
                                             <p className="text-[8pt]">
-                                                Harga Jual :{" "}
-                                                {item.tanggal_terdaftar}
+                                                Harga Jual : {item.harga_jual}
                                             </p>
                                             <p className="text-[8pt]">
-                                                Harga Beli :{" "}
-                                                {item.tanggal_terdaftar}
+                                                Harga Beli : {item.harga_beli}
                                             </p>
                                             <p className="text-[8pt]">
                                                 Stok : {item.stok} {item.satuan}
