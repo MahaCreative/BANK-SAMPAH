@@ -8,6 +8,7 @@ import { Link, usePage } from "@inertiajs/react";
 
 export default function Drawer() {
     const drawerRef = useRef();
+    const { reload } = usePage();
     const [drawerOpen, setDrawerOpen] = useState(false);
     const { auth } = usePage().props;
     useEffect(() => {
@@ -34,12 +35,22 @@ export default function Drawer() {
                                 <CloseIcon color="inherit" fontSize="inherit" />
                             </Buttons>
                         ) : (
-                            <Buttons onClick={() => setDrawerOpen(true)}>
-                                <WidgetsIcon
-                                    color="inherit"
-                                    fontSize="inherit"
-                                />
-                            </Buttons>
+                            <div className="flex gap-3 items-center">
+                                <Buttons
+                                    onClick={() => window.location.reload()}
+                                >
+                                    <RefreshIcon
+                                        color="inherit"
+                                        fontSize="inherit"
+                                    />
+                                </Buttons>
+                                <Buttons onClick={() => setDrawerOpen(true)}>
+                                    <WidgetsIcon
+                                        color="inherit"
+                                        fontSize="inherit"
+                                    />
+                                </Buttons>
+                            </div>
                         )}
                     </div>
                 </div>

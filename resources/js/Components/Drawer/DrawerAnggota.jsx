@@ -5,9 +5,10 @@ import Buttons from "../Buttons/Buttons";
 import clsx from "clsx";
 import DropdownMenu from "../Menu/DropdownMenu";
 import { Link, usePage } from "@inertiajs/react";
-
+import RefreshIcon from "@mui/icons-material/Refresh";
 export default function DrawerAnggota() {
     const drawerRef = useRef();
+    const { reload } = usePage();
     const [drawerOpen, setDrawerOpen] = useState(false);
     const { auth } = usePage().props;
     useEffect(() => {
@@ -34,12 +35,22 @@ export default function DrawerAnggota() {
                                 <CloseIcon color="inherit" fontSize="inherit" />
                             </Buttons>
                         ) : (
-                            <Buttons onClick={() => setDrawerOpen(true)}>
-                                <WidgetsIcon
-                                    color="inherit"
-                                    fontSize="inherit"
-                                />
-                            </Buttons>
+                            <div className="flex gap-3 items-center">
+                                <Buttons
+                                    onClick={() => window.location.reload()}
+                                >
+                                    <RefreshIcon
+                                        color="inherit"
+                                        fontSize="inherit"
+                                    />
+                                </Buttons>
+                                <Buttons onClick={() => setDrawerOpen(true)}>
+                                    <WidgetsIcon
+                                        color="inherit"
+                                        fontSize="inherit"
+                                    />
+                                </Buttons>
+                            </div>
                         )}
                     </div>
                 </div>
