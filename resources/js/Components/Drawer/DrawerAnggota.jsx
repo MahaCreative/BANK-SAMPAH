@@ -110,11 +110,11 @@ export default function DrawerAnggota() {
                     </Link>
                     <DropdownMenu name={"Menu Umum"}>
                         <DropdownMenu.MenuLink
-                            href={route("admin.kategori-sampah")}
+                            href={route("anggota.kategori-sampah")}
                         >
                             Kategori Sampah
                         </DropdownMenu.MenuLink>
-                        <DropdownMenu.MenuLink href={route("admin.informasi")}>
+                        <DropdownMenu.MenuLink href={route("informasi")}>
                             Informasi
                         </DropdownMenu.MenuLink>
                     </DropdownMenu>
