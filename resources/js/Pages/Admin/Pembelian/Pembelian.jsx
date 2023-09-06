@@ -12,12 +12,68 @@ export default function Pembelian(props) {
     const anggota = props.anggota;
     const { data: pembelian, meta, links } = props.pembelian;
     const [modalSelectAnggota, setModalSelectAnggota] = useState(false);
+    const [dataPembelian, setDataPembelian] = useState(null);
+    const [lihatModal, setLihatModal] = useState(false);
     const pilihAnggota = (data) => {
         router.get(route("admin.create-pembelian"), data);
     };
-    console.log(pembelian);
+    const lihatModalHandler = (item) => {
+        setDataPembelian(item);
+        setLihatModal(true);
+    };
+    console.log(dataPembelian);
     return (
         <div>
+            <Modal show={lihatModal} onClose={setLihatModal}>
+                <div className="my-16 mx-4">
+                    <h3 className="text-xl text-teal-400 font-bold">
+                        Data Pembelian
+                    </h3>
+                    {dataPembelian &&
+                        dataPembelian.detail_pembelian.map((item, key) => (
+                            <div
+                                key={key + 1}
+                                className="hover:cursor-pointer hover:bg-teal-200 my-2.5 mx-4 flex gap-3 shadow-md shadow-gray-400 border border-gray-400/50 py-2.5 px-2 rounded-md"
+                            >
+                                <img
+                                    className="w-24 h-24 content-center"
+                                    src={
+                                        "/storage/" + item.kategori_sampah.image
+                                    }
+                                    alt=""
+                                />
+                                <div className="py-2.5 w-full">
+                                    <h3 className="uppercase text-teal text-md font-semibold text-teal-400">
+                                        {item.kategori_sampah.nama_kategori}
+                                    </h3>
+                                    <p name={"jumlah"} className="text-[8pt]">
+                                        Harga Jual :{" "}
+                                        {item.kategori_sampah.harga_jual} /{" "}
+                                        {item.kategori_sampah.satuan}
+                                    </p>
+                                    <p>
+                                        Jumlah Pembelian : {item.jumlah}{" "}
+                                        {item.kategori_sampah.satuan}
+                                    </p>
+                                    {/* <TextInput value={item.jumlah} name={'jumlah'} handleChange={(e) => change(e, item)} min={1} max={99} type={'number'} className={'block w-full my-1.5'} placeholder={item.jumlah}/> */}
+                                    <p className="text-[8pt]">
+                                        Sub Total :{" "}
+                                        <CurrencyFormat
+                                            type="text"
+                                            prefix="Rp. "
+                                            thousandSeparator={true}
+                                            disabled={true}
+                                            value={
+                                                item.jumlah *
+                                                item.kategori_sampah.harga_jual
+                                            }
+                                        />
+                                    </p>
+                                </div>
+                            </div>
+                        ))}
+                </div>
+            </Modal>
             <Modal show={modalSelectAnggota} onClose={setModalSelectAnggota}>
                 <div className="mx-4 my-4">
                     <h3 className="text-xl text-teal-400 font-bold">
@@ -77,9 +133,9 @@ export default function Pembelian(props) {
             </Modal>
             <Authenticated>
                 <Header
-                    header={"Data Pembelia"}
+                    header={"Data Pembelian"}
                     message={
-                        "Menu ini menampilkan data pembelian yang telah dilakukan sebelumnya, untuk membuat pembelian baru silahkan menekan tombol tambah pembelian"
+                        "Data pembelian digunakan admin untuk menambakan pembelian sampah terhadap anggota baru. Menu ini menampilkan data pembelian yang telah dilakukan sebelumnya, untuk membuat pembelian baru silahkan menekan tombol tambah pembelian"
                     }
                 />
                 <div className="mx-4 my-2.5 flex justify-between items-center gap-3">
@@ -114,7 +170,7 @@ export default function Pembelian(props) {
                                         {item.profile_petugas.nama_petugas}
                                     </p>
                                     <p className="text-sm font-light">
-                                        Pembelian Oleh :{" "}
+                                        Penjualan Oleh Anggota :{" "}
                                         {item.profile_anggota.nama_anggota}
                                     </p>
                                     <p className="text-sm font-light">
@@ -128,13 +184,15 @@ export default function Pembelian(props) {
                                     </p>
                                     <div className="flex absolute bottom-1.5 right-2 gap-1  w-1/2">
                                         <Buttons
-                                            //   onClick={() => lihatModalHandler(item)}
+                                            onClick={() =>
+                                                lihatModalHandler(item)
+                                            }
                                             type={"button"}
                                             className={
                                                 " bg-gradient-to-br from-teal-700 to-teal-500 text-white"
                                             }
                                         >
-                                            Lihat Penjualan
+                                            Lihat Pembelian
                                         </Buttons>
                                     </div>
                                 </div>

@@ -37,7 +37,7 @@ class AnggotaController extends Controller
     {
         $anggota = ProfilAnggotaResource::collection($this->query($request->search, $request->paginate));
         $lk = ProfileAnggota::where('jenis_kelamin', '=', 'Laki-Laki')->count();
-        $pr = ProfileAnggota::where('jenis_kelamin', '=', 'Laki-Laki')->count();
+        $pr = ProfileAnggota::where('jenis_kelamin', '=', 'Perempuan')->count();
         $count = ProfileAnggota::count();
 
         return inertia('Kasir/Anggota/Anggota', ['anggota' => $anggota, 'lk' => $lk, 'pr'=> $pr, 'count' => $count]);

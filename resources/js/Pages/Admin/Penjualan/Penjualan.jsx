@@ -21,7 +21,7 @@ export default function Penjualan(props) {
         <div>
             <Authenticated>
                 <Modal show={lihatModal} onClose={setLihatModal}>
-                    <div className="my-2 mx-4">
+                    <div className="my-16 mx-4">
                         <h3 className="text-xl text-teal-400 font-bold">
                             Data Penjualan
                         </h3>
@@ -65,7 +65,7 @@ export default function Penjualan(props) {
                 <Header
                     header={"Data Penjualan"}
                     message={
-                        "Halaman ini digunakan untuk menampilkan informasi penjualan yang terjadi pada sistem informasi"
+                        "Halaman ini digunakan oleh admin untuk menambahkan transaksi penjualan sampah baru ke pengepul. Halaman ini digunakan untuk menampilkan informasi penjualan yang terjadi pada sistem informasi"
                     }
                 />
                 <div className="max-h-[370px] overflow-y-auto scrollbar-thin scrollbar-thumb-rounded-full scrollbar-track-rounded-full scrollbar-thumb-emerald-400 scrollbar-track-emerald-200">

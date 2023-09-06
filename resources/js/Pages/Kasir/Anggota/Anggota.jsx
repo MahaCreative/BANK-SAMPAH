@@ -112,7 +112,7 @@ export default function Anggota(props) {
                     open={akunModal}
                     close={setAkunModal}
                 />
-                <div className="max-h-[310px] overflow-x-hidden overflow-y-auto scrollbar-thin scrollbar-thumb-rounded-full scrollbar-track-rounded-full scrollbar-thumb-emerald-400 scrollbar-track-emerald-200">
+                <div className="max-h-[90vh] overflow-x-hidden overflow-y-auto scrollbar-thin scrollbar-thumb-rounded-full scrollbar-track-rounded-full scrollbar-thumb-emerald-400 scrollbar-track-emerald-200">
                     <h3 className="mx-4 mt-4 text-2xl font-roboto text-teal-400 font-extrabold">
                         Total Anggota
                     </h3>

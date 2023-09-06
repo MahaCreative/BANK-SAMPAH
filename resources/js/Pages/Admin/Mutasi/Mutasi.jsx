@@ -288,7 +288,9 @@ export default function Mutasi(props) {
                 <Header
                     size="h-40"
                     header={"Data Mutasi"}
-                    message={"Menu ini menampilkan data mutasi"}
+                    message={
+                        "Menu ini di gunakan admin untuk melakukan penarikan saldo anggota, serta digunakan untuk melihat seluruh history mutasi yang telah berhasil dilakukan"
+                    }
                 />
                 <div className="mx-4 my-2.5 flex justify-between items-center gap-3">
                     <Buttons
@@ -301,7 +303,7 @@ export default function Mutasi(props) {
                     </Buttons>
                     <FilterSearch link={"admin.data-mutasi"} />
                 </div>
-                <div className="mx-4 max-h-[320px] overflow-y-auto touch-pan-y shadow-gray-400 border border-gray-400/50 py-1 px-2 rounded-md scrollbar-thin scrollbar-thumb-rounded-full scrollbar-track-rounded-full scrollbar-thumb-emerald-400 scrollbar-track-emerald-200">
+                <div className="mx-4 max-h-[90vh] overflow-y-auto touch-pan-y shadow-gray-400 border border-gray-400/50 py-1 px-2 rounded-md scrollbar-thin scrollbar-thumb-rounded-full scrollbar-track-rounded-full scrollbar-thumb-emerald-400 scrollbar-track-emerald-200">
                     {mutasi.map((item, key) => (
                         <div key={key + 1} className=" shadow-md ">
                             <div className=" hover:cursor-pointer hover:bg-teal-200  shadow-md shadow-gray-400 border border-gray-400/50 py-1 px-2 rounded-md flex gap-2 items-center">

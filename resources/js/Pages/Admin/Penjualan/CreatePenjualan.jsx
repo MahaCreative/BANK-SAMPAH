@@ -148,10 +148,20 @@ export default function CreatePenjualan({ penjualan, sampah }) {
                                     {item.nama_kategori}
                                 </h3>
                                 <p className="text-[8pt]">
-                                    Harga Jual : {item.tanggal_terdaftar}
+                                    Harga Jual :{" "}
+                                    <CurrencyFormat
+                                        disabled={true}
+                                        type="text"
+                                        value={item.harga_jual}
+                                    />
                                 </p>
-                                <p className="text-[8pt]">
-                                    Harga Beli : {item.tanggal_terdaftar}
+                                <p className="text-[8pt] my-2">
+                                    Harga Beli :{" "}
+                                    <CurrencyFormat
+                                        disabled={true}
+                                        type="text"
+                                        value={item.harga_beli}
+                                    />
                                 </p>
                                 <p className="text-[8pt]">
                                     Stok : {item.stok} {item.satuan}
@@ -241,7 +251,7 @@ export default function CreatePenjualan({ penjualan, sampah }) {
                 {penjualan.status_penjualan === "belum selesai" && (
                     <div
                         onClick={() => setAddProduct(true)}
-                        className="fixed bottom-52 right-5 hover:cursor-pointer bg-teal-400 rounded-full text-white hover:scale-105"
+                        className="fixed bottom-[26%] right-5 hover:cursor-pointer bg-teal-400 rounded-full text-white hover:scale-105"
                     >
                         <AddCircleIcon color="inherit" sx={{ fontSize: 40 }} />
                     </div>

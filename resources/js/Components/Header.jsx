@@ -12,7 +12,7 @@ export default function Header({ message, header, size = "h-56" }) {
             <h3 className="text-white font-roboto font-bold text-xl border-b-2 border-white inline">
                 {header}
             </h3>
-            <p className="text-[10pt]  font-nunito font-extralight text-gray-200">
+            <p className="text-[8pt]  font-nunito font-extralight text-gray-200">
                 {message}
             </p>
         </div>

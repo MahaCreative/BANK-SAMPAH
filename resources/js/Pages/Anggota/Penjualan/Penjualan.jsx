@@ -105,7 +105,7 @@ export default function Penjualan(props) {
                         </div>
                     </div>
                 </div>
-                <div className=" relative mt-8  px-4 ">
+                <div className=" relative mt-16  px-4 ">
                     <div
                         onClick={() => setModalFilterDate(true)}
                         className="mb-2 shadow-sm shadow-gray-400/50 rounded-md py-1.5 px-4 hover:cursor-pointer"
@@ -146,7 +146,7 @@ export default function Penjualan(props) {
                                                 <p className="text-[8pt] font-light">
                                                     {item.tanggal_mutasi}
                                                 </p>
-                                                <p className="text-[8pt] font-light">
+                                                <p className="text-[8pt] capitalize font-light">
                                                     Transaksi By :{" "}
                                                     {
                                                         item.profile_petugas

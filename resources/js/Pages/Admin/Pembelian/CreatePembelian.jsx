@@ -130,7 +130,7 @@ export default function CreatePembelian({ pembelian, sampah }) {
                             <p className="text-[8pt] text-gray-600 font-semibold">
                                 Pembelian Pada Anggota
                             </p>
-                            <p className="text-[8pt] text-gray-600 font-semibold">
+                            <p className="text-[8pt] capitalize text-gray-600 font-semibold">
                                 : {pembelian.profile_anggota.nama_anggota}
                             </p>
                         </div>
@@ -243,7 +243,7 @@ export default function CreatePembelian({ pembelian, sampah }) {
                 {pembelian.status_pembelian === "belum selesai" && (
                     <div
                         onClick={() => setAddProduct(true)}
-                        className="fixed bottom-44 right-5 hover:cursor-pointer bg-teal-400 rounded-full text-white hover:scale-105"
+                        className="fixed bottom-[26%] right-5 hover:cursor-pointer bg-teal-400 rounded-full text-white hover:scale-105"
                     >
                         <AddCircleIcon color="inherit" sx={{ fontSize: 40 }} />
                     </div>

@@ -15,21 +15,26 @@ class HistoryPenjualanController extends Controller
         if($request->tanggal_awal === null && $request->tanggal_akhir === null){
 
             return mutasi::where('profile_anggota_id', $anggota->id)
+            ->with('profile_petugas')
             ->where('jenis_mutasi', 'Setoran')
             ->latest()->fastPaginate();
         }else if($request->tanggal_awal !== null && $request->tanggal_akhir == null){
             return mutasi::where('profile_anggota_id', $anggota->id)
+            ->with('profile_petugas')
             ->where('jenis_mutasi', 'Setoran')
             ->where('tanggal_mutasi', '>=', $request->tanggal_awal)
+            ->with('profile_petugas')
             ->latest()->fastPaginate();
 
         }else if($request->tanggal_awal === null && $request->tanggal_akhir !== null){
             return mutasi::where('profile_anggota_id', $anggota->id)
+            ->with('profile_petugas')
             ->where('jenis_mutasi', 'Setoran')
             ->where('tanggal_mutasi', '<=', $request->tanggal_akhir)
             ->latest()->fastPaginate();
         }else{
             return mutasi::where('profile_anggota_id', $anggota->id)
+            ->with('profile_petugas')
             ->where('jenis_mutasi', 'Setoran')
             ->where('tanggal_mutasi', '>=', $request->tanggal_awal)
             ->where('tanggal_mutasi', '<=', $request->tanggal_akhir)

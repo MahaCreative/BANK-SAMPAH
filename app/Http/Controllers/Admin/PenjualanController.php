@@ -15,7 +15,7 @@ class PenjualanController extends Controller
     {
         return Penjualan::with(['profile_petugas', 'detail_penjualan' => function ($q) {
             $q->with('kategori_sampah');
-        }])->latest()->fastPaginate();
+        }])->where('status_penjualan', '=', 'penjualan selesai')->latest()->fastPaginate();
     }
     public function index(Request $request)
     {
