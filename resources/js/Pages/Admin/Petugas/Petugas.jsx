@@ -39,7 +39,7 @@ export default function Petugas(props) {
         setAkunModal(true);
         setModelPetugas(data.id);
     };
-
+    console.log(petugas);
     return (
         <div>
             <Authenticated>
@@ -126,14 +126,18 @@ export default function Petugas(props) {
                                         <h3 className="uppercase text-teal text-md font-semibold text-teal-400">
                                             {item.nama_petugas}
                                         </h3>
-                                        <p className="text-[8pt]">
+                                        <p className="text-[8pt] capitalize">
                                             Kode Petugas : {item.kd_petugas}
                                         </p>
-                                        <p className="text-[8pt]">
+                                        <p className="text-[8pt] capitalize">
                                             Alamat : {item.alamat}
                                         </p>
-                                        <p className="text-[8pt]">
+                                        <p className="text-[8pt] capitalize">
                                             Telp : {item.no_telp}
+                                        </p>
+                                        <p className="capitalize">
+                                            Status Akun :{" "}
+                                            {item.user.roles[0].name}
                                         </p>
                                     </div>
                                 </div>
@@ -163,16 +167,19 @@ export default function Petugas(props) {
                                     >
                                         Edit
                                     </Buttons>
-                                    <Buttons
-                                        type={"button"}
-                                        onClick={() => deleteHandler(item)}
-                                        type={"button"}
-                                        className={
-                                            "bg-gradient-to-br from-red-700 to-red-500 text-white"
-                                        }
-                                    >
-                                        Delete
-                                    </Buttons>
+                                    {item.user.roles[0].name !==
+                                        "ketua bank sampah" && (
+                                        <Buttons
+                                            type={"button"}
+                                            onClick={() => deleteHandler(item)}
+                                            type={"button"}
+                                            className={
+                                                "bg-gradient-to-br from-red-700 to-red-500 text-white"
+                                            }
+                                        >
+                                            Delete
+                                        </Buttons>
+                                    )}
                                 </div>
                             </div>
                         ))

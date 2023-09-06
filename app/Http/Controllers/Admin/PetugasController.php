@@ -18,21 +18,30 @@ class PetugasController extends Controller
         $count = ProfilePetugas::count();
         if ($paginate === 'all') {
             if ($search === null) {
-                return ProfilePetugas::with('user')->fastPaginate($count);
+                return ProfilePetugas::with(['user' => function($query){
+                    $query->with('roles');
+                }])->fastPaginate($count);
             } else {
-                return ProfilePetugas::with('user')->where('nama_petugas', 'like', '%' . $search . '%')->fastPaginate($count);
+                return ProfilePetugas::with(['user' => function($query){
+                    $query->with('roles');
+                }])->where('nama_petugas', 'like', '%' . $search . '%')->fastPaginate($count);
             }
         } else {
             if ($search === null) {
-                return ProfilePetugas::with('user')->fastPaginate($paginate);
+                return ProfilePetugas::with(['user' => function($query){
+                    $query->with('roles');
+                }])->fastPaginate($paginate);
             } else {
-                return ProfilePetugas::with('user')->where('nama_petugas', 'like', '%' . $search . '%')->fastPaginate($paginate);
+                return ProfilePetugas::with(['user' => function($query){
+                    $query->with('roles');
+                }])->where('nama_petugas', 'like', '%' . $search . '%')->fastPaginate($paginate);
             }
         }
     }
     public function index(Request $request)
     {
         $petugas = ProfilePetuagsResource::collection($this->query($request->search, $request->paginate));
+
         return inertia('Admin/Petugas/Petugas', ['petugas' => $petugas]);
     }
     public function store(Request $request)
