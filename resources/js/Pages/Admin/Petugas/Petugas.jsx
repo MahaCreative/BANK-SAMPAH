@@ -137,7 +137,8 @@ export default function Petugas(props) {
                                         </p>
                                         <p className="capitalize">
                                             Status Akun :{" "}
-                                            {item.user.roles[0].name}
+                                            {item.user &&
+                                                item.user.roles[0].name}
                                         </p>
                                     </div>
                                 </div>
@@ -160,15 +161,29 @@ export default function Petugas(props) {
                                     <Buttons
                                         type={"button"}
                                         onClick={() => editHandler(item)}
-                                        type={"button"}
                                         className={
                                             "bg-gradient-to-br from-orange-700 to-orange-500 text-white"
                                         }
                                     >
                                         Edit
                                     </Buttons>
-                                    {item.user.roles[0].name !==
-                                        "ketua bank sampah" && (
+                                    {item.user &&
+                                        item.user.roles[0] !==
+                                            "ketua bank sampah" && (
+                                            <Buttons
+                                                type={"button"}
+                                                onClick={() =>
+                                                    deleteHandler(item)
+                                                }
+                                                type={"button"}
+                                                className={
+                                                    "bg-gradient-to-br from-red-700 to-red-500 text-white"
+                                                }
+                                            >
+                                                Delete
+                                            </Buttons>
+                                        )}
+                                    {item.user == null && (
                                         <Buttons
                                             type={"button"}
                                             onClick={() => deleteHandler(item)}
