@@ -167,34 +167,6 @@ export default function Petugas(props) {
                                     >
                                         Edit
                                     </Buttons>
-                                    {item.user &&
-                                        item.user.roles[0] !==
-                                            "ketua bank sampah" && (
-                                            <Buttons
-                                                type={"button"}
-                                                onClick={() =>
-                                                    deleteHandler(item)
-                                                }
-                                                type={"button"}
-                                                className={
-                                                    "bg-gradient-to-br from-red-700 to-red-500 text-white"
-                                                }
-                                            >
-                                                Delete
-                                            </Buttons>
-                                        )}
-                                    {item.user == null && (
-                                        <Buttons
-                                            type={"button"}
-                                            onClick={() => deleteHandler(item)}
-                                            type={"button"}
-                                            className={
-                                                "bg-gradient-to-br from-red-700 to-red-500 text-white"
-                                            }
-                                        >
-                                            Delete
-                                        </Buttons>
-                                    )}
                                 </div>
                             </div>
                         ))

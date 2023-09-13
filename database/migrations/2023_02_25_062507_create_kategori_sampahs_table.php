@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('kategori_sampahs', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('petugas_id')->nullable()->constrained('profile_petugas')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreignId('petugas_id')->references('id')->on('profile_petugas')->onUpdate('cascade')->onDelete('cascade');
             $table->string('nama_kategori');
             $table->integer('harga_beli');
             $table->integer('harga_jual');

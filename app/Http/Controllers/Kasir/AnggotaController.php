@@ -23,14 +23,14 @@ class AnggotaController extends Controller
 
         if ($this->paginate == 'all') {
             if ($this->search !== null) {
-                return ProfileAnggota::with('user')->where('nama_anggota', 'like', '%' . $this->search . '%')->get();
+                return ProfileAnggota::with(['user',])->where('nama_anggota', 'like', '%' . $this->search . '%')->get();
             }
-            return ProfileAnggota::with('user')->get();
+            return ProfileAnggota::with(['user',])->get();
         } else {
             if ($this->search !== null) {
-                return ProfileAnggota::with('user')->where('nama_anggota', 'like', '%' . $this->search . '%')->fastPaginate($paginate);
+                return ProfileAnggota::with(['user',])->where('nama_anggota', 'like', '%' . $this->search . '%')->fastPaginate($paginate);
             }
-            return ProfileAnggota::with('user')->fastPaginate($paginate);
+            return ProfileAnggota::with(['user',])->fastPaginate($paginate);
         }
     }
     public function index(Request $request)
@@ -40,7 +40,7 @@ class AnggotaController extends Controller
         $pr = ProfileAnggota::where('jenis_kelamin', '=', 'Perempuan')->count();
         $count = ProfileAnggota::count();
 
-        return inertia('Kasir/Anggota/Anggota', ['anggota' => $anggota, 'lk' => $lk, 'pr'=> $pr, 'count' => $count]);
+        return inertia('Kasir/Anggota/Anggota', ['anggota' => $anggota, 'lk' => $lk, 'pr' => $pr, 'count' => $count]);
     }
 
     public function store(Request $request)

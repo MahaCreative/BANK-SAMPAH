@@ -14,8 +14,8 @@ return new class extends Migration
         Schema::create('pembelians', function (Blueprint $table) {
             $table->id();
             $table->string('no_pembelian')->unique();
-            $table->foreignId('petugas_id');
-            $table->foreignId('anggota_id');
+            $table->foreignId('petugas_id')->references('id')->on('profile_petugas')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreignId('anggota_id')->references('id')->on('profile_anggotas')->onUpdate('cascade')->onDelete('cascade');
             $table->date('tanggal_pembelian');
             $table->integer('total_pembelian');
             $table->string('status_pembelian')->default('belum selesai');
