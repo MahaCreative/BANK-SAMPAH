@@ -140,7 +140,7 @@ export default function CreatePenjualan({ penjualan, sampah }) {
                         >
                             <img
                                 className="w-24 h-24 content-center"
-                                src={"/storage/" + item.image}
+                                src={"./storage/" + item.image}
                                 alt=""
                             />
                             <div className="py-2.5">
@@ -201,7 +201,7 @@ export default function CreatePenjualan({ penjualan, sampah }) {
                                     <img
                                         className="w-16 h-16 content-center"
                                         src={
-                                            "/storage/" +
+                                            "./storage/" +
                                             item.kategori_sampah.image
                                         }
                                         alt=""

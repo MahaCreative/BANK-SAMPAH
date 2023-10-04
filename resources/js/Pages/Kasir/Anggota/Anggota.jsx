@@ -192,7 +192,7 @@ export default function Anggota(props) {
                                         <img
                                             className="w-24 h-24 content-center"
                                             src={
-                                                "/storage/" + item.foto_anggota
+                                                "./storage/" + item.foto_anggota
                                             }
                                             alt=""
                                         />
