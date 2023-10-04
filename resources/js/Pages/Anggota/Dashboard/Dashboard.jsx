@@ -39,7 +39,7 @@ export default function Dashboard(props) {
                         <div className="px-4 py-2 w-full bg-white rounded-md shadow-sm shadow-gray-300/50 flex justify-between items-center">
                             <div className="flex flex-col items-center justify-center">
                                 <img
-                                    src="/images/graph_naik.png"
+                                    src="./images/graph_naik.png"
                                     className="h-16 w-16"
                                     alt=""
                                 />
@@ -52,7 +52,7 @@ export default function Dashboard(props) {
                         <div className="px-4 py-4 w-full bg-white rounded-md shadow-sm shadow-gray-300/50 flex justify-between items-center">
                             <div className="flex flex-col items-center justify-center">
                                 <img
-                                    src="/images/graph_turun.png"
+                                    src="./images/graph_turun.png"
                                     className="h-16 w-16"
                                     alt=""
                                 />
@@ -75,7 +75,7 @@ export default function Dashboard(props) {
                             as="div"
                             className="py-2.5 px-2 rounded-sm shadow-sm shadow-gray-200 text-center hover:cursor-pointer hover:bg-gray-100"
                         >
-                            <img src="/images/ic_kategori.png" alt="" />
+                            <img src="./images/ic_kategori.png" alt="" />
                             <p className="text-sm">Kategori Sampah</p>
                         </Link>
                         <Link
@@ -83,7 +83,7 @@ export default function Dashboard(props) {
                             as="div"
                             className="relative py-2.5 px-2 rounded-sm shadow-sm shadow-gray-200 text-center hover:cursor-pointer hover:bg-gray-100"
                         >
-                            <img src="/images/informasi.png" alt="" />
+                            <img src="./images/informasi.png" alt="" />
                             <p className="text-sm absolute bottom-2 left-0 w-full">
                                 Informasi
                             </p>
@@ -103,7 +103,7 @@ export default function Dashboard(props) {
                             as="div"
                             className="relative py-2.5 px-2 rounded-sm shadow-sm shadow-gray-200 text-center hover:cursor-pointer hover:bg-gray-100"
                         >
-                            <img src="/images/mutasi.png" alt="" />
+                            <img src="./images/mutasi.png" alt="" />
                             <p className="text-sm absolute bottom-2 left-0 w-full">
                                 History Penarikan
                             </p>
@@ -113,7 +113,7 @@ export default function Dashboard(props) {
                             as="div"
                             className="col-span-4 relative py-2.5 px-2 rounded-sm shadow-sm shadow-gray-200 text-center hover:cursor-pointer hover:bg-gray-100"
                         >
-                            <img src="/images/mutasi.png" alt="" />
+                            <img src="./images/mutasi.png" alt="" />
                             <p className="text-sm absolute bottom-2 left-0 w-full">
                                 History Mutasi
                             </p>

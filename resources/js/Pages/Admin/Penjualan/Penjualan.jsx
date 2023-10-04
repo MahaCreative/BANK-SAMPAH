@@ -34,7 +34,7 @@ export default function Penjualan(props) {
                                     <img
                                         className="w-24 h-24 content-center"
                                         src={
-                                            "/storage/" +
+                                            "./storage/" +
                                             item.kategori_sampah.image
                                         }
                                         alt=""

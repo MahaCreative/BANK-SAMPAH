@@ -68,8 +68,8 @@ export default function Profile() {
             <img
                 src={
                     data.foto_anggota
-                        ? "/storage/" + data.foto_anggota
-                        : "images/user.png"
+                        ? "./storage/" + data.foto_anggota
+                        : "./images/user.png"
                 }
                 className="w-full h-44 object-cover"
             />

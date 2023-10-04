@@ -40,7 +40,7 @@ export default function DashboardKasir(props) {
                     </div>
                     <div className="px-4">
                         <img
-                            src="/images/ic_logo.png"
+                            src="./images/ic_logo.png"
                             alt=""
                             className="w-96"
                         />
@@ -58,7 +58,7 @@ export default function DashboardKasir(props) {
                         href={route("admin.anggota")}
                         className="py-2.5 px-2 rounded-sm shadow-sm shadow-gray-200 text-center hover:cursor-pointer hover:bg-gray-100 flex items-center justify-center flex-col"
                     >
-                        <img src="/images/user.png" alt="" />
+                        <img src="./images/user.png" alt="" />
                         <p className="text-sm">Kelola Anggota</p>
                     </Link>
                 </div>
@@ -72,21 +72,21 @@ export default function DashboardKasir(props) {
                         href={route("admin.pembelian")}
                         className="py-2.5 px-2 rounded-sm shadow-sm shadow-gray-200 text-center hover:cursor-pointer hover:bg-gray-100"
                     >
-                        <img src="/images/ic_recycle.png" alt="" />
+                        <img src="./images/ic_recycle.png" alt="" />
                         <p className="text-sm">Pembelian Sampah</p>
                     </Link>
                     <Link
                         href={route("admin.penjualan")}
                         className="py-2.5 px-2 rounded-sm shadow-sm shadow-gray-200 text-center hover:cursor-pointer hover:bg-gray-100"
                     >
-                        <img src="/images/ic_truk.png" alt="" />
+                        <img src="./images/ic_truk.png" alt="" />
                         <p className="text-sm">Penjualan Sampah</p>
                     </Link>
                     <Link
                         href={route("admin-data-mutasi")}
                         className="py-2.5 px-2 rounded-sm shadow-sm shadow-gray-200 text-center hover:cursor-pointer hover:bg-gray-100"
                     >
-                        <img src="/images/mutasi.png" alt="" />
+                        <img src="./images/mutasi.png" alt="" />
                         <p className="text-sm">Transaksi Mutasi</p>
                     </Link>
                 </div>
@@ -100,14 +100,14 @@ export default function DashboardKasir(props) {
                         href={route("admin.informasi")}
                         className="py-2.5 px-2 rounded-sm shadow-sm shadow-gray-200 text-center hover:cursor-pointer hover:bg-gray-100"
                     >
-                        <img src="/images/informasi.png" alt="" />
+                        <img src="./images/informasi.png" alt="" />
                         <p className="text-sm">Kelola Informasi</p>
                     </Link>
                     <Link
                         href={route("admin.kategori-sampah")}
                         className="py-2.5 px-2 rounded-sm shadow-sm shadow-gray-200 text-center hover:cursor-pointer hover:bg-gray-100"
                     >
-                        <img src="/images/ic_kategori.png" alt="" />
+                        <img src="./images/ic_kategori.png" alt="" />
                         <p className="text-sm">Kelola Kategori Sampah</p>
                     </Link>
                 </div>

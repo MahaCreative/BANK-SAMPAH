@@ -119,7 +119,7 @@ export default function Anggota(props) {
                     <div className="mx-4 bg-gradient-to-br from-emerald-400  to-emerald-400 rounded-md shadow-md shadow-gray-400/50 py-2.5 px-4 flex justify-between items-center">
                         <div className="flex flex-col justify-center items-center">
                             <img
-                                src="/icon/man.png"
+                                src="./icon/man.png"
                                 alt=""
                                 className="h-16 w-16"
                             />
@@ -137,7 +137,7 @@ export default function Anggota(props) {
                         <div className="bg-gradient-to-br from-blue-600  to-cyan-400 rounded-md shadow-md shadow-gray-500/50 py-2.5 px-4 flex justify-between items-center">
                             <div className="flex flex-col justify-center items-center">
                                 <img
-                                    src="/icon/man.png"
+                                    src="./icon/man.png"
                                     alt=""
                                     className="h-16 w-16"
                                 />
@@ -154,7 +154,7 @@ export default function Anggota(props) {
                         <div className="bg-gradient-to-br from-violet-600 to-pink-500 rounded-md shadow-md shadow-gray-500/50 py-2.5 px-4 flex justify-between items-center">
                             <div className="flex flex-col justify-center items-center">
                                 <img
-                                    src="/icon/woman.png"
+                                    src="./icon/woman.png"
                                     alt=""
                                     className="h-16 w-16"
                                 />
@@ -192,7 +192,7 @@ export default function Anggota(props) {
                                         <img
                                             className="w-24 h-24 content-center"
                                             src={
-                                                "/storage/" + item.foto_anggota
+                                                "./storage/" + item.foto_anggota
                                             }
                                             alt=""
                                         />
