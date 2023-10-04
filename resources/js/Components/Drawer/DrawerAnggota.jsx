@@ -68,7 +68,7 @@ export default function DrawerAnggota() {
                             <img
                                 src={
                                     auth.profile
-                                        ? "./storage/" +
+                                        ? "/storage/" +
                                           auth.profile.foto_anggota
                                         : "/images/user.png"
                                 }

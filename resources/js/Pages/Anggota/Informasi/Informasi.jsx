@@ -34,7 +34,7 @@ export default function Informasi({ informasi }) {
                 </div>
                 <div className="my-2.5 mx-4">
                     <img
-                        src={"./storage/" + informasi.gambar_informasi}
+                        src={"/storage/" + informasi.gambar_informasi}
                         className="w-full h-32 object-contain object-center"
                     />
                 </div>
