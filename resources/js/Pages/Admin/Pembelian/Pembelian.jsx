@@ -38,7 +38,7 @@ export default function Pembelian(props) {
                                 <img
                                     className="w-24 h-24 content-center"
                                     src={
-                                        "./storage/" +
+                                        "../storage/" +
                                         item.kategori_sampah.image
                                     }
                                     alt=""
@@ -95,7 +95,7 @@ export default function Pembelian(props) {
                                           <img
                                               className="w-24 h-24 content-center"
                                               src={
-                                                  "./storage/" +
+                                                  "../storage/" +
                                                   item.foto_anggota
                                               }
                                               alt=""

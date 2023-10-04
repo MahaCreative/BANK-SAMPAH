@@ -68,9 +68,9 @@ export default function DrawerAnggota() {
                             <img
                                 src={
                                     auth.profile
-                                        ? "./storage/" +
+                                        ? "../storage/" +
                                           auth.profile.foto_anggota
-                                        : "./images/user.png"
+                                        : "../images/user.png"
                                 }
                                 alt=""
                                 className="w-24 h-24 object-cover object-center shadow-md shadow-gray-500/50 p-2 rounded-full bg-teal-400"

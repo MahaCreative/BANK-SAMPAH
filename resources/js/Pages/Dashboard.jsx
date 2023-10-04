@@ -40,7 +40,7 @@ export default function Dashboard(props) {
                     </div>
                     <div className="px-4">
                         <img
-                            src="./images/ic_logo.png"
+                            src="../images/ic_logo.png"
                             alt=""
                             className="w-96"
                         />
@@ -58,7 +58,7 @@ export default function Dashboard(props) {
                         href={route("admin.petugas")}
                         className="py-2.5 px-2 rounded-sm shadow-sm shadow-gray-200 text-center hover:cursor-pointer hover:bg-gray-100 flex items-center justify-center flex-col"
                     >
-                        <img src="./images/user.png" alt="" />
+                        <img src="../images/user.png" alt="" />
                         <p className="text-sm">Kelola Petugas</p>
                     </Link>
                 </div>
@@ -72,21 +72,21 @@ export default function Dashboard(props) {
                         href={route("ketua.transaksi-pembelian")}
                         className="py-2.5 px-2 rounded-sm shadow-sm shadow-gray-200 text-center hover:cursor-pointer hover:bg-gray-100"
                     >
-                        <img src="./images/ic_recycle.png" alt="" />
+                        <img src="../images/ic_recycle.png" alt="" />
                         <p className="text-sm">Pembelian Sampah</p>
                     </Link>
                     <Link
                         href={route("ketua.transaksi-penjualan")}
                         className="py-2.5 px-2 rounded-sm shadow-sm shadow-gray-200 text-center hover:cursor-pointer hover:bg-gray-100"
                     >
-                        <img src="./images/ic_truk.png" alt="" />
+                        <img src="../images/ic_truk.png" alt="" />
                         <p className="text-sm">Penjualan Sampah</p>
                     </Link>
                     <Link
                         href={route("ketua.transaksi-mutasi")}
                         className="py-2.5 px-2 rounded-sm shadow-sm shadow-gray-200 text-center hover:cursor-pointer hover:bg-gray-100"
                     >
-                        <img src="./images/mutasi.png" alt="" />
+                        <img src="../images/mutasi.png" alt="" />
                         <p className="text-sm">Transaksi Mutasi</p>
                     </Link>
                 </div>
@@ -100,21 +100,21 @@ export default function Dashboard(props) {
                         href={route("ketua.laporan-pembelian")}
                         className="py-2.5 px-2 rounded-sm shadow-sm shadow-gray-200 text-center hover:cursor-pointer hover:bg-gray-100"
                     >
-                        <img src="./images/ic_recycle.png" alt="" />
+                        <img src="../images/ic_recycle.png" alt="" />
                         <p className="text-sm">Pembelian Sampah</p>
                     </Link>
                     <Link
                         href={route("ketua.laporan-penjualan")}
                         className="py-2.5 px-2 rounded-sm shadow-sm shadow-gray-200 text-center hover:cursor-pointer hover:bg-gray-100"
                     >
-                        <img src="./images/ic_truk.png" alt="" />
+                        <img src="../images/ic_truk.png" alt="" />
                         <p className="text-sm">Penjualan Sampah</p>
                     </Link>
                     <Link
                         href={route("ketua.laporan-mutasi")}
                         className="py-2.5 px-2 rounded-sm shadow-sm shadow-gray-200 text-center hover:cursor-pointer hover:bg-gray-100"
                     >
-                        <img src="./images/mutasi.png" alt="" />
+                        <img src="../images/mutasi.png" alt="" />
                         <p className="text-sm">Transaksi Mutasi</p>
                     </Link>
                 </div>

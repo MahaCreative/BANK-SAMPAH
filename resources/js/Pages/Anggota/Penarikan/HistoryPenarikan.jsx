@@ -74,7 +74,7 @@ export default function HistoryPenarikan(props) {
                         <div className="px-4 py-2 w-full bg-white rounded-md shadow-sm shadow-gray-300/50 flex justify-between items-center">
                             <div className="flex flex-col ">
                                 <img
-                                    src="./images/graph_naik.png"
+                                    src="../images/graph_naik.png"
                                     className="h-16 w-16"
                                     alt=""
                                 />
@@ -89,7 +89,7 @@ export default function HistoryPenarikan(props) {
                         <div className="px-4 py-2 w-full bg-white rounded-md shadow-sm shadow-gray-300/50 flex justify-between items-center">
                             <div className="flex flex-col">
                                 <img
-                                    src="./images/graph_naik.png"
+                                    src="../images/graph_naik.png"
                                     className="h-16 w-16"
                                     alt=""
                                 />
@@ -111,7 +111,7 @@ export default function HistoryPenarikan(props) {
                         <div className="border-emerald-400 border-b-2 py-1 flex justify-between">
                             <div className="flex gap-3">
                                 <img
-                                    src="./images/date.png"
+                                    src="../images/date.png"
                                     className="w-6 h-6"
                                     alt=""
                                 />

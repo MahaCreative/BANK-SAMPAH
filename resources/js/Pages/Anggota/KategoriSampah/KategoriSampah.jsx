@@ -32,7 +32,7 @@ export default function KategoriSampah(props) {
                                     <div className="flex gap-3">
                                         <img
                                             className="w-20 h-20 content-center"
-                                            src={"./storage/" + item.image}
+                                            src={"../storage/" + item.image}
                                             alt=""
                                         />
                                         <div className="py-1.5">

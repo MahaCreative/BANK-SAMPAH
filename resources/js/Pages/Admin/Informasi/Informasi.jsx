@@ -89,7 +89,8 @@ export default function Informasi(props) {
                                     <img
                                         className="w-24 h-24 content-center"
                                         src={
-                                            "./storage/" + item.gambar_informasi
+                                            "../storage/" +
+                                            item.gambar_informasi
                                         }
                                         alt=""
                                     />

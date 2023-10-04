@@ -14,7 +14,7 @@ export default function LihatAnggota({ model, setModel, open, close }) {
                     <>
                         <div className="w-full py-2 px-4">
                             <img
-                                src={"./storage/" + model.foto_anggota}
+                                src={"../storage/" + model.foto_anggota}
                                 alt=""
                                 className="w-full h-48 object-cover object-top "
                             />

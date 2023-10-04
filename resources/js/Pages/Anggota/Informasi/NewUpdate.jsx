@@ -14,7 +14,7 @@ export default function NewUpdate() {
                           <div className="rounded-md shadow-md shadow-gray-400/50 py-2.5 px-4 my-1.5">
                               <div className="flex gap-3 w-full">
                                   <img
-                                      src={"./storage/images/preview.png"}
+                                      src={"../storage/images/preview.png"}
                                       alt=""
                                       className="w-28 h-28 object-cover"
                                   />

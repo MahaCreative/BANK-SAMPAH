@@ -119,7 +119,7 @@ export default function Petugas(props) {
                                 <div className="flex gap-3">
                                     <img
                                         className="w-24 h-24 content-center"
-                                        src={"./storage/" + item.foto_petugas}
+                                        src={"../storage/" + item.foto_petugas}
                                         alt=""
                                     />
                                     <div className="py-2.5">

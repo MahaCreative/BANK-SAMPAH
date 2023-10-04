@@ -51,8 +51,8 @@ export default function Profile() {
             <img
                 src={
                     data.foto_petugas
-                        ? "./storage/" + data.foto_petugas
-                        : "./images/user.png"
+                        ? "../storage/" + data.foto_petugas
+                        : "../images/user.png"
                 }
                 className="w-full h-44 object-cover"
             />

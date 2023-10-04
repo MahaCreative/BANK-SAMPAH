@@ -247,7 +247,7 @@ export default function Mutasi(props) {
                                           <img
                                               className="w-24 h-24 content-center"
                                               src={
-                                                  "./storage/" +
+                                                  "../storage/" +
                                                   item.foto_anggota
                                               }
                                               alt=""
@@ -310,7 +310,7 @@ export default function Mutasi(props) {
                                 <img
                                     className="w-16 h-16 content-center"
                                     src={
-                                        "./storage/" +
+                                        "../storage/" +
                                         item.profile_anggota.foto_anggota
                                     }
                                     alt=""

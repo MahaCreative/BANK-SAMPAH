@@ -38,7 +38,8 @@ export default function Index(props) {
                                 >
                                     <img
                                         src={
-                                            "./storage/" + item.gambar_informasi
+                                            "../storage/" +
+                                            item.gambar_informasi
                                         }
                                         alt=""
                                         className="h-24 w-full object-contain object-center"
